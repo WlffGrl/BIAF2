@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto  text-uppercase">
                 <li class="nav-item">
-                    <a class="nav-link" href="/welcome">BIAF</a>
+                    <a class="nav-link" href="/">BIAF</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pengumuman">Pengumuman</a>

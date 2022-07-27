@@ -14,7 +14,7 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/welcome', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index']);
 Route::get('/pengumuman', [PagesController::class, 'pengumuman']);
 Route::get('/jadwal', [PagesController::class, 'jadwal']);
 Route::get('/forum', [PagesController::class, 'forum']);

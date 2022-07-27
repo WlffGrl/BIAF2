@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('pages.welcome');
+        return view('welcome');
     }
     public function pengumuman()
     {
