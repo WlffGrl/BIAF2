@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,11 @@ use App\Http\Controllers\PagesController;
 |
 */
 
+// PagesController
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/pengumuman', [PagesController::class, 'pengumuman']);
 Route::get('/jadwal', [PagesController::class, 'jadwal']);
 Route::get('/forum', [PagesController::class, 'forum']);
+
+//PostsController
+Route::resource('posts', PostsController::class);
