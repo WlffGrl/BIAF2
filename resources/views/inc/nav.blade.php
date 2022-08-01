@@ -5,9 +5,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse" id="navbar">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav navbar-right">
             <li class="nav-item"><a href="/" class="nav-link">BIAF</a></li>
-            <li class="nav-item"><a href="/pengumuman" class="nav-link">PENGUMUMAN</a></li>
+            <li class="nav-item"><a href="posts" class="nav-link">PENGUMUMAN</a></li>
             <li class="nav-item"><a href="/jadwal" class="nav-link">JADWAL</a></li>
             <li class="nav-item"><a href="/forum" class="nav-link">FORUM</a></li>
             <li class="nav-item"><a href="/index" class="nav-link">INDEX PENGUKURAN</a></li>
