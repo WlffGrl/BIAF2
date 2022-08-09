@@ -1,6 +1,6 @@
 <!-- slider -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" data-interval="100">
         <div class="carousel-item active">
             <img src="upload/slider/1659341676.jpg" class="" alt="...">
         </div>
@@ -16,14 +16,11 @@
         <div class="carousel-item">
             <img src="upload/slider/1659344545.jpg" class="" alt="...">
         </div>
+        <div class="carousel-caption">
+            <img src="img/pemkot.png" width="200" class="md-4 mb-4" alt="">
+            <h1>Cimahi DigiFest</h1>
+            <p>Cimahi Centre of Digital Creative Business</p>
+        </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </button>
 </div>
 <!-- end slider -->

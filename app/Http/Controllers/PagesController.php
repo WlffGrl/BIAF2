@@ -19,8 +19,12 @@ class PagesController extends Controller
     {
         return view('pages.jadwal');
     }
-    public function forum()
+    public function pengukuran()
     {
-        return view('pages.forum');
+        return view('pages.pengukuran');
+    }
+    public function investasi()
+    {
+        return view('Pages.investasi');
     }
 }

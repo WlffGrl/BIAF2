@@ -1,5 +1,5 @@
-@extends('layout.app')
-
+@extends('layouts.master')
+@section('title', 'slider')
 @section('content')
 <div class="container mt-5">
     <div class="row">
@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>slider
-                        <a href="{{url('add-slider')}}" class="btn btn-primary ">Add Slider</a>
+                        <a href="{{url('/admin/add-slider')}}" class="btn btn-primary ">Add Slider</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -43,10 +43,11 @@
                                 </td>
                                 <td>{{$item->created_at}}</td>
                                 <td>
-                                    <a href="{{url('edit-slider/'.$item->id)}}" class="btn btn-success btn-sm">Edit</a>
+                                    <a href="{{url('/admin/edit-slider/'.$item->id)}}"
+                                        class="btn btn-success btn-sm">Edit</a>
                                 </td>
                                 <td>
-                                    <a href="{{url('delete-slider/'.$item->id)}}"
+                                    <a href="{{url('/admin/delete-slider/'.$item->id)}}"
                                         class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>

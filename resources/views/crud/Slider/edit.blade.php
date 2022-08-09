@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container mt-5">
@@ -10,11 +10,12 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Edit Slider
-                        <a href="{{url('crud-slider')}}" class="btn btn-danger ">Back</a>
+                        <a href="{{url('/admin/crud-slider')}}" class="btn btn-danger ">Back</a>
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{url('update-slider/'.$slider->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('/admin/update-slider/'.$slider->id)}}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
