@@ -35,6 +35,11 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/edit-slider/{id}', [SliderController::class, 'edit']);
     Route::put('/update-slider/{id}', [SliderController::class, 'update']);
     Route::get('/delete-slider/{id}', [SliderController::class, 'destroy']);
+
+    //Post
+    Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
+    Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
+    Route::post('post-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
 });
 
 // PagesController
