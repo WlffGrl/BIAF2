@@ -75,9 +75,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($post_id)
     {
-        //
+        $category = Category::where('status', '0')->get();
+        $post = Post::find($post_id);
+        return view('admin.post.edit', compact('post', 'category'));
     }
 
     /**
@@ -87,9 +89,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostFormRequest $request, $post_id)
     {
-        //
+        $data = $request->validated();
+        $post = Post::find($post_id);
+        $post->category_id = $data['category_id'];
+        $post->name = $data['name'];
+        $post->slug = $data['slug'];
+        $post->description = $data['description'];
+        $post->yt_iframe = $data['yt_iframe'];
+        $post->meta_title = $data['meta_title'];
+        $post->meta_description = $data['meta_description'];
+        $post->meta_keyword = $data['meta_keyword'];
+        $post->status = $request->status == true ? '1' : '0';
+        $post->created_by = Auth::user()->id;
+        $post->update();
+
+        return redirect('admin/posts')->with('message', 'Post Updated!!');
     }
 
     /**
@@ -98,8 +114,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($post_id)
     {
-        //
+        $post = Post::find($post_id);
+        if ($post) {
+            $post->delete();
+            return redirect('admin/posts')->with('message', 'Delete Success!!');
+        } else {
+            return redirect('admin/posts')->with('message', 'No posts Found');
+        }
     }
 }

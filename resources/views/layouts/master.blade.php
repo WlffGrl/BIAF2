@@ -14,6 +14,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Summernote css -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
@@ -37,8 +41,20 @@
     </div>
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
     <script src="js/scripts.js"></script>
+
+    <!-- Summernote JS - CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#your_summernote").summernote({
+                height: 350,
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 </body>
 
 </html>

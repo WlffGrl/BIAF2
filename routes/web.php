@@ -40,7 +40,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
     Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
     Route::post('post-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
-    Route::get('edit-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+    Route::get('edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
     Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
     Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
@@ -48,6 +48,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
     Route::get('add-post', [App\Http\Controllers\Admin\PostController::class, 'create']);
     Route::post('store-post', [App\Http\Controllers\Admin\PostController::class, 'store']);
+    Route::get('edit-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'edit']);
+    Route::put('update-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'update']);
+    Route::get('delete-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'destroy']);
 });
 
 // PagesController
