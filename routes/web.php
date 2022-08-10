@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SliderController;
@@ -36,10 +36,18 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('/update-slider/{id}', [SliderController::class, 'update']);
     Route::get('/delete-slider/{id}', [SliderController::class, 'destroy']);
 
-    //Post
+    //Category
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
     Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
     Route::post('post-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
+    Route::get('edit-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+    Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
+    Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+
+    //Posts
+    Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
+    Route::get('add-post', [App\Http\Controllers\Admin\PostController::class, 'create']);
+    Route::post('store-post', [App\Http\Controllers\Admin\PostController::class, 'store']);
 });
 
 // PagesController

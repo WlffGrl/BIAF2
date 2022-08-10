@@ -14,10 +14,10 @@ class Category extends Model
         'slug',
         'description',
         'image',
-        'meta-title',
-        'meta-description',
-        'meta-keyword',
-        'navbar-status',
+        'meta_title',
+        'meta_description',
+        'meta_keyword',
+        'navbar_status',
         'status',
         'created-by'
 

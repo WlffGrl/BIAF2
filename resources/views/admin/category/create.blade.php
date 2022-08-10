@@ -63,7 +63,7 @@
                         <input type="checkbox" class="status">
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn-btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
