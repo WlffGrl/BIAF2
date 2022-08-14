@@ -16,6 +16,22 @@ class FrontendController extends Controller
     {
         return view('frontend.index');
     }
+    public function pengumuman()
+    {
+        return view('frontend.pengumuman');
+    }
+    public function jadwal()
+    {
+        return view('frontend.jadwal');
+    }
+    public function pengukuran()
+    {
+        return view('frontend.pengukuran');
+    }
+    public function investasi()
+    {
+        return view('frontend.investasi');
+    }
 
     /**
      * Show the form for creating a new resource.

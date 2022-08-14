@@ -20,7 +20,12 @@ use App\Http\Controllers\SliderController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', App\Http\Controllers\Frontend\FrontendController::class, 'index');
+
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('/pengumuman', [App\Http\Controllers\Frontend\FrontendController::class, 'pengumuman']);
+Route::get('/jadwal', [App\Http\Controllers\Frontend\FrontendController::class, 'jadwal']);
+Route::get('/pengukuran', [App\Http\Controllers\Frontend\FrontendController::class, 'pengukuran']);
+Route::get('/investasi', [App\Http\Controllers\Frontend\FrontendController::class, 'investasi']);
 
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
@@ -55,14 +60,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
     Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
 });
-
-// PagesController
-Route::get('/', [PagesController::class, 'index']);
-Route::get('/pengumuman', [PagesController::class, 'pengumuman']);
-Route::get('/jadwal', [PagesController::class, 'jadwal']);
-Route::get('/pengukuran', [PagesController::class, 'pengukuran']);
-Route::get('/investasi', [PagesController::class, 'investasi']);
-
 
 //PostsController
 Route::resource('posts', PostsController::class);

@@ -1,0 +1,22 @@
+
+
+.image0{
+    padding-top : 2rem;
+    background-image: url("img/bg1.jpg");
+    background-color:rgb(189, 196, 255);
+    background-position: bottom;
+    background-size: cover;
+    height: 100%;
+}
+
+
+.navbar{
+    padding : 0px 0px !important;
+}
+
+.navbar-nav .nav-link{
+    color:#fff !important;
+    font-weight: 600;
+    border-right: 1px solid;
+    padding: 8px 18px !important;
+}
