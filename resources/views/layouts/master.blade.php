@@ -18,11 +18,26 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
+
+    <!-- DataTable css -->
+    <link href="https:////cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
+
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
 
     <!-- My Style -->
     <link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
+    <style>
+        .dataTables_wrapper .dataTables_paginate .paginate_button{
+            padding: 0px !important;
+            margin : 0px !important;
+        }
+        div.dataTables_wrapper div.dataTables_length select {
+            width: 50% !important;
+        }
+    </style>
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -54,6 +69,15 @@
             });
             $('.dropdown-toggle').dropdown();
         });
+    </script>
+
+    <!-- DataTable JS -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready( function () {
+    $('#myDataTable').DataTable();
+} );
     </script>
 </body>
 

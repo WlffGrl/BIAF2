@@ -9,7 +9,7 @@
             </h4>
         </div>
         <div class="card-body">
-            <table class="table bordered">
+            <table id="myDataTable" class="table bordered">
                 @csrf
                 <thead>
                     <th>ID</th>

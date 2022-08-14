@@ -1,12 +1,10 @@
 @extends('layouts.master')
-@section('title', 'Posts')
+@section('title', 'Users')
 @section('content')
 <div class="container-fluid px-4">
     <div class="card mt-4">
         <div class="card-header">
-            <h4>View Posts
-                <a href="{{url('admin/add-post')}}" class="btn btn-primary btn-sm float-end">Add Post</a>
-            </h4>
+            <h4>View Users</h4>
         </div>
         <div class="card-body">
             @if (session('message'))
@@ -15,21 +13,20 @@
             <table id="myDataTable" class="table table-bordered">
                 <thead>
                     <th>id</th>
-                    <th>Category</th>
-                    <th>Post Name</th>
-                    <th>state</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    @foreach ($post as $item)
+                    @foreach ($user as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->category->name}}</td>
-                        <td>{{$item->name}}</td>
-                        <td>{{$item->status == '1' ? 'Hidden': 'Visible'}}</td>
+                        <td>{{$item->username}}</td>
+                        <td>{{$item->email}}</td>
+                        <td>{{$item->role_as == '1' ? 'Admin': 'User'}}</td>
                         <td>
-                            <a href="{{url('admin/edit-post/'.$item->id)}}" class="btn btn-primary">Edit</a>
-                            <a href="{{url('admin/delete-post/'.$item->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{url('admin/edit-user/'.$item->id)}}" class="btn btn-primary">Edit</a>
                         </td>
                     </tr>
                     @endforeach
