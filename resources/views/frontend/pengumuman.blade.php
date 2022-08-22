@@ -1,48 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container px-4 px-lg-5">
     <div class="category-heading text-uppercase">
         <h4>{{$category->name}}</h4>
     </div>
     <hr>
-    <!-- Heading Row-->
-    <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
-                src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">Business Name or Tagline</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it
-                makes a great use of the standard Bootstrap core components. Feel free to use this template for any
-                project you want!</p>
-            <a class="btn btn-primary" href="#!">Call to Action!</a>
-        </div>
-    </div>
-    <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body">
-            <p class="text-white m-0">This call to action card is a great place to showcase some important information
-                or display a clever tagline!</p>
-        </div>
-    </div>
-    <div class="row gx-4 gx-lg-5">
+    <div class="shadow p-3 mb-5 bg-body rounded">
         @forelse ($post as $postitem)
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">{{$postitem->name}}</h2>
-                    <h6>Posted On : {{$postitem->created_at->format('d-m-Y')}}</h6>
-                    <hr>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
-                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{url($category->slug.'/'. $postitem->slug)}}">View</a></div>
-            </div>
+        <div class="pengumuman p-3">
+            <p class="fs-5">{{$postitem->name}}</p>
+            <p class="fs-6"><i class="fa fa-calendar"></i>{{$postitem->created_at->format('d-m-Y')}}</p>
+            <a class="btn btn-success btn-sm" href="{{url($category->slug.'/'. $postitem->slug)}}">Lihat Detail</a>
+        </div>
+        <div class="paginate">
+            {{ $post->links('pagination::bootstrap-4') }}
         </div>
         @empty
 
         @endforelse
     </div>
+
     <!--
     <div class="row gx-4 gx-lg-5">
         <div class="col-md-4 mb-5">

@@ -26,6 +26,8 @@ Route::get('/jadwal', [App\Http\Controllers\Frontend\FrontendController::class, 
 Route::get('/pengukuran', [App\Http\Controllers\Frontend\FrontendController::class, 'pengukuran']);
 Route::get('/investasi', [App\Http\Controllers\Frontend\FrontendController::class, 'investasi']);
 Route::get('{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'Categoryview']);
+Route::get('{category_slug}/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewPost']);
+
 
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {

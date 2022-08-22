@@ -7,18 +7,18 @@
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="/" class="nav-link">BIAF</a></li>
-            <li class="nav-item"><a href="posts" class="nav-link">PENGUMUMAN</a></li>
-            <li class="nav-item"><a href="/jadwal" class="nav-link">JADWAL</a></li>
-            <li class="nav-item"><a href="/pengukuran" class="nav-link">INDEX PENGUKURAN</a></li>
-            <li class="nav-item"><a href="/investasi" class="nav-link">PLATFORM INVESTASI</a></li>
             @php
                 $categories = App\Models\Category::where('navbar_status', '0')->where('status', '0')->get();
             @endphp
             @foreach ($categories as $cateitem)
-            <li class="nav-item">
+            <li class="nav-item text-uppercase">
                 <a href="{{$cateitem->slug}}" class="nav-link">{{$cateitem->name}}</a>
             </li>
             @endforeach
+            <li class="nav-item"><a href="/jadwal" class="nav-link">JADWAL</a></li>
+            <li class="nav-item"><a href="/pengukuran" class="nav-link">INDEX PENGUKURAN</a></li>
+            <li class="nav-item"><a href="/investasi" class="nav-link">PLATFORM INVESTASI</a></li>
+
         </ul>
     </div>
 </nav>

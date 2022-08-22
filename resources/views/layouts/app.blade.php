@@ -41,7 +41,7 @@
 
     <!-- Content -->
     <section id="content">
-        <div class="container p-5">
+        <div class="container-fluid p-5">
             @include('layouts.inc.messages')
             @yield('content')
         </div>

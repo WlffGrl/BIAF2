@@ -3,11 +3,10 @@
 @section('content')
 <div class="text-center" style="">
     <!-- Grid container -->
-    <div class="container p-4">
         <!-- Section: Links -->
         <section class="">
             <!--Grid row-->
-            <div class="row">
+            <div class="row justify-content-evenly">
                 <!--Grid column-->
                 <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
                     <img src="img/sample2.jpg" class="img-fluid" alt="">
@@ -33,7 +32,6 @@
                 <!--Grid column-->
             </div>
         </section>
-    </div>
 </div>
 
 @endsection
