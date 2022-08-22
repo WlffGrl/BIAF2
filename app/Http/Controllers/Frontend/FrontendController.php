@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FrontendController extends Controller
 {
@@ -16,10 +18,6 @@ class FrontendController extends Controller
     {
         return view('frontend.index');
     }
-    public function pengumuman()
-    {
-        return view('frontend.pengumuman');
-    }
     public function jadwal()
     {
         return view('frontend.jadwal');
@@ -31,6 +29,16 @@ class FrontendController extends Controller
     public function investasi()
     {
         return view('frontend.investasi');
+    }
+    public function Categoryview($category_slug)
+    {
+        $category = Category::where('slug', $category_slug)->where('status', '0')->first();
+        if ($category) {
+            $post = Post::where('category_id', $category->id)->where('status', '0')->get();
+            return view('frontend.pengumuman', compact('post', 'category'));
+        } else {
+            return redirect('/');
+        }
     }
 
     /**

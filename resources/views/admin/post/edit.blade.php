@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox" class="form-control form-check-input" {{$post->status == '1' ? 'checked' : ''}}>
+                        <input name="status" type="checkbox" class="form-control form-check-input" {{$post->status == '1' ? 'checked' : ''}}>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">Update Post</button>

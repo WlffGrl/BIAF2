@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container px-4 px-lg-5">
+    <div class="category-heading text-uppercase">
+        <h4>{{$category->name}}</h4>
+    </div>
+    <hr>
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
@@ -21,7 +25,25 @@
                 or display a clever tagline!</p>
         </div>
     </div>
-    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        @forelse ($post as $postitem)
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">{{$postitem->name}}</h2>
+                    <h6>Posted On : {{$postitem->created_at->format('d-m-Y')}}</h6>
+                    <hr>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{url($category->slug.'/'. $postitem->slug)}}">View</a></div>
+            </div>
+        </div>
+        @empty
+
+        @endforelse
+    </div>
+    <!--
     <div class="row gx-4 gx-lg-5">
         <div class="col-md-4 mb-5">
             <div class="card h-100">
@@ -54,5 +76,5 @@
                 <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
             </div>
         </div>
-    </div>
+    </div> -->
     @endsection
