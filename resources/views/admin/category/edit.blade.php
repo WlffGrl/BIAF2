@@ -59,11 +59,11 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="">Navbar Status</label>
-                        <input name="navbar_status" type="checkbox" class="form-check-input" {{$category->navbar_status == '1' ? 'checked':''}}>
+                        <input type="checkbox" class="navbar-status" {{$category->navbar_status == '1' ? 'checked':''}}>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="">Status</label>
-                        <input name="status" type="checkbox" class="form-check-input" {{$category->status == '1' ? 'checked':''}}>
+                        <input type="checkbox" class="status" {{$category->status == '1' ? 'checked' : ''}}>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">Update Category</button>

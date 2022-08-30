@@ -23,8 +23,4 @@ class PagesController extends Controller
     {
         return view('pages.pengukuran');
     }
-    public function investasi()
-    {
-        return view('Pages.investasi');
-    }
 }

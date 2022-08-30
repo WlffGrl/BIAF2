@@ -1,12 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.content')
 
 @section('content')
-<div class="jumbotron">
-    <h1 class="display-4">Platform Investasi</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+<div class="shadow p-3 mb-5 bg-body rounded">
+<section class="video">
+    <div class="row text-center">
+        <h2>Videos</h2>
+    </div>
+    <hr>
+    <div class="col">
+        @forelse ($embed as $item)
+        <iframe width="560" height="315" src="{{$item->embed_links}}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        @empty
+        <h1>No Content</h1>
+        @endforelse
+    </div>
+
+</section>
 </div>
 @endsection

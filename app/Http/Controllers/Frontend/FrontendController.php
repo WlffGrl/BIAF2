@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Post;
-use App\Models\Category;
+use App\Models\Embeds;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 
 class FrontendController extends Controller
 {
@@ -18,6 +20,11 @@ class FrontendController extends Controller
     {
         return view('frontend.index');
     }
+    public function pengumuman()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->where('status', '0')->paginate(10);
+        return view('frontend.pengumuman')->with('posts', $posts);
+    }
     public function jadwal()
     {
         return view('frontend.jadwal');
@@ -28,28 +35,11 @@ class FrontendController extends Controller
     }
     public function investasi()
     {
-        return view('frontend.investasi');
+        $embed = Embeds::orderBy('created_at', 'desc')->get();
+        return view('frontend.investasi')->with('embed', $embed);
     }
-    public function Categoryview(string $category_slug)
-    {
-        $category = Category::where('slug', $category_slug)->where('status', '0')->first();
-        if ($category) {
-            $post = Post::where('category_id', $category->id)->where('status', '0')->paginate(10);
-            return view('frontend.pengumuman', compact('post', 'category'));
-        } else {
-            return redirect('/');
-        }
-    }
-    public function viewPost(string $category_slug, string $post_slug)
-    {
-        $category = Category::where('slug', $category_slug)->where('status', '0')->first();
-        if ($category) {
-            $post = Post::where('category_id', $category->id)->where('slug', $post_slug)->where('status', '0')->first();
-            return view('frontend.view', compact('post'));
-        } else {
-            return redirect('/');
-        }
-    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -78,9 +68,10 @@ class FrontendController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showPost(string $post_slug)
     {
-        //
+        $posts = Post::where('slug', $post_slug)->where('status', '0')->first();
+        return view('frontend.view.viewPengumuman', compact('posts'));
     }
 
     /**

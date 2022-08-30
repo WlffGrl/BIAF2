@@ -51,6 +51,20 @@
                     </nav>
                 </div>
 
+                <a class="nav-link {{Request::is('admin/embed') || Request::is('admin/add-embed') || Request::is('admin/edit-embed/*') ? 'collapse active' : 'collapsed'}} " href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmbeds"
+                    aria-expanded="false" aria-controls="collapseEmbeds">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Embeds
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse {{Request::is('admin/embed') || Request::is('admin/add-embed') || Request::is('admin/edit-embed/*') ? 'show' : ''}}" id="collapseEmbeds" aria-labelledby="headingFour"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link {{Request::is('admin/add-embed') ? 'active' : ''}}" href="{{url('/admin/add-embed')}}">Add Embed</a>
+                        <a class="nav-link {{Request::is('admin/embed') || Request::is('admin/edit-embed/*') ? 'active' : ''}}" href="{{url('admin/embed')}}">View Embeds</a>
+                    </nav>
+                </div>
+
                 <a class="nav-link {{Request::is('admin/users') ? 'active' : ''}}" href="{{url('/admin/users')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Users

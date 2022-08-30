@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SliderController;
 
 /*
@@ -22,11 +20,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('/pengumuman', [App\Http\Controllers\Frontend\FrontendController::class, 'pengumuman']);
+Route::get('pengumuman/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showPost']);
+
 Route::get('/jadwal', [App\Http\Controllers\Frontend\FrontendController::class, 'jadwal']);
 Route::get('/pengukuran', [App\Http\Controllers\Frontend\FrontendController::class, 'pengukuran']);
+
+
 Route::get('/investasi', [App\Http\Controllers\Frontend\FrontendController::class, 'investasi']);
-Route::get('{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'Categoryview']);
-Route::get('{category_slug}/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewPost']);
 
 
 
@@ -61,4 +62,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
     Route::get('edit-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
     Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
+
+    //Embeds
+    Route::get('embed', [App\Http\Controllers\Admin\EmbedController::class, 'index']);
+    Route::get('add-embed', [App\Http\Controllers\Admin\EmbedController::class, 'create']);
+    Route::post('store-embed', [App\Http\Controllers\Admin\EmbedController::class, 'store']);
+    Route::post('delete-embed', [App\Http\Controllers\Admin\EmbedController::class, 'destroy']);
 });
