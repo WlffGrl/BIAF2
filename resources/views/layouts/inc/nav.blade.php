@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark" style="background-color:rgb(23, 35, 199)">
     <div class="container-fluid p-4">
       <a class="navbar-brand" href="#">
-        <img src="{{asset('img/logo2020.png')}}" alt="" width="200" height="30" class="d-inline-block align-text-top">
+        <img src="{{asset('img/CimahiDigiFest.png')}}" alt="" width="400" class="d-inline-block align-text-top">
       </a>
     </div>
   </nav>

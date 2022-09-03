@@ -9,12 +9,11 @@
     <hr>
     <div class="col">
         @forelse ($embed as $item)
-        <iframe width="560" height="315" src="{{$item->embed_links}}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315"src="{{$item->embed_links}}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         @empty
-        <h1>No Content</h1>
+            <h1>No Content</h1>
         @endforelse
     </div>
-
 </section>
 </div>
 @endsection
