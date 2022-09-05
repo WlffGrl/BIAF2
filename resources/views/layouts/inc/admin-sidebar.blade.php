@@ -8,22 +8,8 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                    aria-expanded="false" aria-controls="collapsePages">
-                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    Pages
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapsePages" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="login.html">Pengumuman</a>
-                        <a class="nav-link" href="register.html">Jadwal</a>
-                        <a class="nav-link" href="{{url('/admin/crud-slider')}}">Slider</a>
-                    </nav>
-                </div>
 
-                <a class="nav-link {{Request::is('admin/category') || Request::is('admin/add-category') || Request::is('admin/edit-category/*') ? 'collapse active' : 'collapsed'}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
+                {{--<a class="nav-link {{Request::is('admin/category') || Request::is('admin/add-category') || Request::is('admin/edit-category/*') ? 'collapse active' : 'collapsed'}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
                     aria-expanded="false" aria-controls="collapseCategory">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Category
@@ -36,6 +22,7 @@
                         <a class="nav-link {{Request::is('admin/category') || Request::is('admin/edit-category/*') ? 'active' : ''}}" href="{{url('admin/category')}}">View Category</a>
                     </nav>
                 </div>
+                --}}
 
                 <a class="nav-link {{Request::is('admin/posts') || Request::is('admin/add-post') || Request::is('admin/edit-post/*') ? 'collapse active' : 'collapsed'}} " href="#" data-bs-toggle="collapse" data-bs-target="#collapsePosts"
                     aria-expanded="false" aria-controls="collapsePosts">
@@ -53,7 +40,7 @@
 
                 <a class="nav-link {{Request::is('admin/embed') || Request::is('admin/add-embed') || Request::is('admin/edit-embed/*') ? 'collapse active' : 'collapsed'}} " href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmbeds"
                     aria-expanded="false" aria-controls="collapseEmbeds">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-video"></i></div>
                     Embeds
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -68,6 +55,11 @@
                 <a class="nav-link {{Request::is('admin/users') ? 'active' : ''}}" href="{{url('/admin/users')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Users
+                </a>
+
+                <a class="nav-link {{Request::is('admin/crud-slider') ? 'active' : ''}}" href="{{url('/admin/crud-slider')}}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-image"></i></div>
+                    Slider
                 </a>
             </div>
         </div>

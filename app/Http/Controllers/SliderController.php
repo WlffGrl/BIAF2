@@ -123,7 +123,16 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $slider = slider::where('id', $id)->delete();
-        return redirect()->back()->with('status', 'Delete Success!');
+        $slider = slider::find($id);
+        if ($slider) {
+            $destination = 'upload/slider/' . $slider->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $slider->delete();
+            return redirect('admin/crud-slider')->with('message', 'Delete Success!!');
+        } else {
+            return redirect('admin/crud-slider')->with('message', 'No Slider Found');
+        }
     }
 }

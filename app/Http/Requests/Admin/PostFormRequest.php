@@ -24,10 +24,6 @@ class PostFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'category_id' => [
-                'required',
-                'integer'
-            ],
             'name' => [
                 'required',
                 'string'
@@ -38,23 +34,6 @@ class PostFormRequest extends FormRequest
             ],
             'description' => [
                 'required'
-            ],
-            'yt_iframe' => [
-                'nullable',
-                'string'
-            ],
-            'meta_title' => [
-                'required',
-                'string',
-                'max:200'
-            ],
-            'meta_description' => [
-                'nullable',
-                'string'
-            ],
-            'meta_keyword' => [
-                'nullable',
-                'string'
             ],
             'status' => [
                 'nullable',

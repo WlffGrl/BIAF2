@@ -36,7 +36,7 @@
 
 
     <!-- Slider -->
-    @include('layouts.inc.slider')
+    @yield('SLIDER')
     <!-- End Slider -->
 
     <!-- Content -->
@@ -59,6 +59,8 @@
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
     <script src="js/scripts.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>

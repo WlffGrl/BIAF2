@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class slider extends Model
 {
     use HasFactory;
-    /*
     protected $table = 'sliders';
     protected $fillable = [
         'heading',
@@ -18,5 +17,4 @@ class slider extends Model
         'image',
         'status',
     ];
-    */
 }

@@ -15,7 +15,6 @@
             <table id="myDataTable" class="table table-bordered">
                 <thead>
                     <th>id</th>
-                    <th>Category</th>
                     <th>Post Name</th>
                     <th>state</th>
                     <th>Action</th>
@@ -24,7 +23,6 @@
                     @foreach ($post as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->category->name}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->status == '1' ? 'Hidden': 'Visible'}}</td>
                         <td>

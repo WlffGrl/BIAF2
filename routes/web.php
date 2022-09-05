@@ -35,20 +35,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
     //slider
-    Route::get('/crud-slider', [SliderController::class, 'index']);
-    Route::get('/add-slider', [SliderController::class, 'create']);
-    Route::post('/store-slider', [SliderController::class, 'store']);
-    Route::get('/edit-slider/{id}', [SliderController::class, 'edit']);
-    Route::put('/update-slider/{id}', [SliderController::class, 'update']);
-    Route::get('/delete-slider/{id}', [SliderController::class, 'destroy']);
-
-    //Category
-    Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
-    Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
-    Route::post('post-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
-    Route::get('edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
-    Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
-    Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+    Route::get('crud-slider', [SliderController::class, 'index']);
+    Route::get('add-slider', [SliderController::class, 'create']);
+    Route::post('store-slider', [SliderController::class, 'store']);
+    Route::get('edit-slider/{id}', [SliderController::class, 'edit']);
+    Route::put('update-slider/{id}', [SliderController::class, 'update']);
+    Route::get('delete-slider/{id}', [SliderController::class, 'destroy']);
 
     //Posts
     Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
@@ -69,3 +61,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('store-embed', [App\Http\Controllers\Admin\EmbedController::class, 'store']);
     Route::get('delete-embed/{embed_id}', [App\Http\Controllers\Admin\EmbedController::class, 'destroy']);
 });
+
+/*
+    //Category
+    Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
+    Route::get('add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
+    Route::post('post-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
+    Route::get('edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+    Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
+    Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+*/

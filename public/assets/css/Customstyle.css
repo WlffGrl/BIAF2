@@ -1,14 +1,20 @@
-
 .navbar{
     padding : 0px 0px !important;
 }
 
 .navbar-nav .nav-link{
-    color:#fff !important;
-    font-weight: 600;
-    border-right: 1px solid;
     padding: 8px 18px !important;
 }
+
+.navbar-nav .nav-link:hover{
+    background-color:#0068d8;
+    display:block;
+}
+
+.nav-item:focus{
+    background-color:#0068d8;
+}
+
 
 .grid-container {
     display: flex;
@@ -31,4 +37,11 @@
       width: 32%;
     }
   }
+
+  .carousel-inner>.item {
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    transition: 0s !important;
+}
+
 

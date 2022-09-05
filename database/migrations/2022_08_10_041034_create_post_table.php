@@ -16,14 +16,9 @@ return new class extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
             $table->string('name');
             $table->string('slug');
             $table->mediumText('description');
-            $table->string('yt_iframe')->nullable();
-            $table->string('meta_title');
-            $table->string('meta_description')->nullable();
-            $table->string('meta_keyword')->nullable();
             $table->tinyInteger('status');
             $table->integer('created_by');
             $table->timestamps();

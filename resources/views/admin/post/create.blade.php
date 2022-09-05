@@ -20,15 +20,6 @@
 
             <form action="{{url('admin/store-post')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
-                <div class="mb-3">
-                    <label for="">Category</label>
-                    <select name="category_id" id="" class="form-control">
-                        @foreach ($category as $cateitem)
-                            <option value="{{$cateitem->id}}">{{$cateitem->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
                 <div class="mb-3">
                     <label for="">Post Name</label>
                     <input type="text" name="name" class="form-control">
@@ -41,30 +32,12 @@
                     <label for="">Description</label>
                     <textarea name="description" id="your_summernote" rows="10" class="form-control"></textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="">Youtube Link</label>
-                    <input type="text" name="yt_iframe" class="form-control">
-                </div>
-
-                <h6>SEO Tag</h6>
-                <div class="mb-3">
-                    <label for="">Meta Title</label>
-                    <input type="text" name="meta_title" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="">Meta Description</label>
-                    <textarea name="meta_description" id="" rows="10" class="form-control"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="">Meta Keyword</label>
-                    <textarea name="meta_keyword" id="" rows="10" class="form-control"></textarea>
-                </div>
 
                 <h6>Status</h6>
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox" class="form-control form-check-input">
+                        <input name ="status" type="checkbox" class="form-control form-check-input">
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">Save Post</button>

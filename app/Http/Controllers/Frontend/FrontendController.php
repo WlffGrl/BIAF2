@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Post;
 use App\Models\Embeds;
+use App\Models\slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -18,7 +19,8 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $slider = slider::where('status', '0')->get();
+        return view('frontend.index', compact('slider'));
     }
     public function pengumuman()
     {
@@ -38,6 +40,13 @@ class FrontendController extends Controller
         $embed = Embeds::orderBy('created_at', 'desc')->get();
         return view('frontend.investasi')->with('embed', $embed);
     }
+    /*
+    public function slider()
+    {
+        $slider = slider::where('status', '0')->get();
+        return view('frontend.slider', compact('slider'));
+    }
+*/
 
 
 
