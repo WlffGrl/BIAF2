@@ -21,6 +21,8 @@
                 <div class="mb-3">
                     <label for="">Embed Links</label>
                     <input type="text" name="embed_links" class="form-control">
+                    <p class="fs-6 text-success"><i class="fa-solid fa-circle-exclamation"></i>
+                        Contoh : https://www.youtube.com/embed/zpOULjyy-n8</p>
                 </div>
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">Submit</button>

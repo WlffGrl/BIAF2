@@ -67,5 +67,5 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('embed', [App\Http\Controllers\Admin\EmbedController::class, 'index']);
     Route::get('add-embed', [App\Http\Controllers\Admin\EmbedController::class, 'create']);
     Route::post('store-embed', [App\Http\Controllers\Admin\EmbedController::class, 'store']);
-    Route::post('delete-embed', [App\Http\Controllers\Admin\EmbedController::class, 'destroy']);
+    Route::get('delete-embed/{embed_id}', [App\Http\Controllers\Admin\EmbedController::class, 'destroy']);
 });

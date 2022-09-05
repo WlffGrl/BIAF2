@@ -7,9 +7,11 @@
         <h2>Videos</h2>
     </div>
     <hr>
-    <div class="col">
+    <div class="grid-container">
         @forelse ($embed as $item)
-            <iframe width="560" height="315"src="{{$item->embed_links}}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <div class="iframe-container">
+            <iframe width="100%" height="100%"src="{{$item->embed_links}}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
         @empty
             <h1>No Content</h1>
         @endforelse
