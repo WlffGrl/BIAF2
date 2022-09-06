@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Embeds extends Model
+class Jadwal extends Model
 {
     use HasFactory;
-    protected $table = 'embed_video';
+    protected $table = 'jadwal';
     protected $fillable = [
         'title',
+        'slug',
         'description',
-        'embed_links'
+        'status',
+        'created_by'
     ];
 }

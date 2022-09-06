@@ -7,6 +7,7 @@ use App\Models\Embeds;
 use App\Models\slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Jadwal;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 
@@ -29,7 +30,8 @@ class FrontendController extends Controller
     }
     public function jadwal()
     {
-        return view('frontend.jadwal');
+        $jadwal = Jadwal::orderBy('created_at', 'desc')->where('status', '0')->paginate(10);
+        return view('frontend.jadwal')->with('jadwal', $jadwal);
     }
     public function pengukuran()
     {
@@ -81,6 +83,12 @@ class FrontendController extends Controller
     {
         $posts = Post::where('slug', $post_slug)->where('status', '0')->first();
         return view('frontend.view.viewPengumuman', compact('posts'));
+    }
+
+    public function showJadwal(string $jadwal_slug)
+    {
+        $jadwal = Jadwal::where('slug', $jadwal_slug)->where('status', '0')->first();
+        return view('frontend.view.viewJadwal', compact('jadwal'));
     }
 
     /**

@@ -17,6 +17,15 @@
 
             <form action="{{url('admin/store-embed')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <div class="mb-3">
+                    <label for="">Title</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" rows="10" class="form-control"></textarea>
+                </div>
 
                 <div class="mb-3">
                     <label for="">Embed Links</label>

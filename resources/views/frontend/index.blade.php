@@ -5,7 +5,7 @@
     <div class="carousel-inner">
         @php $i = 1; @endphp
         @foreach ($slider as $slideritem)
-        <div class="carousel-item {{$i == '1' ? 'active':''}}" data-bs-interval="10000">
+        <div class="carousel-item {{$i == '1' ? 'active':''}}">
             @php $i++; @endphp
             <img src="{{asset ('upload/slider/'.$slideritem->image)}}" class="d-block w-100" alt="..." >
         </div>

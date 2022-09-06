@@ -24,6 +24,8 @@ Route::get('/pengumuman', [App\Http\Controllers\Frontend\FrontendController::cla
 Route::get('pengumuman/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showPost']);
 
 Route::get('/jadwal', [App\Http\Controllers\Frontend\FrontendController::class, 'jadwal']);
+Route::get('jadwal/{jadwal_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showJadwal']);
+
 Route::get('/pengukuran', [App\Http\Controllers\Frontend\FrontendController::class, 'pengukuran']);
 
 
@@ -59,7 +61,14 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('embed', [App\Http\Controllers\Admin\EmbedController::class, 'index']);
     Route::get('add-embed', [App\Http\Controllers\Admin\EmbedController::class, 'create']);
     Route::post('store-embed', [App\Http\Controllers\Admin\EmbedController::class, 'store']);
+    Route::get('edit-embed/{embed_id}', [App\Http\Controllers\Admin\EmbedController::class, 'edit']);
+    Route::put('update-embed/{embed_id}', [App\Http\Controllers\Admin\EmbedController::class, 'update']);
     Route::get('delete-embed/{embed_id}', [App\Http\Controllers\Admin\EmbedController::class, 'destroy']);
+
+    //Jadwal
+    Route::get('jadwal', [App\Http\Controllers\Admin\JadwalController::class, 'index']);
+    Route::get('add-jadwal', [App\Http\Controllers\Admin\JadwalController::class, 'create']);
+    Route::post('store-jadwal', [App\Http\Controllers\Admin\JadwalController::class, 'store']);
 });
 
 /*

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EmbedFormRequest extends FormRequest
+class JadwalFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +26,19 @@ class EmbedFormRequest extends FormRequest
         $rules = [
             'title' => [
                 'required',
-                'max:200'
+                'string'
+            ],
+            'slug' => [
+                'required',
+                'string'
             ],
             'description' => [
                 'required'
             ],
-            'embed_links' => [
+            'status' => [
                 'nullable',
-                'regex:/^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/i',
-                'max:200'
             ],
+
         ];
         return $rules;
     }

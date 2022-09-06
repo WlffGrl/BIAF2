@@ -29,13 +29,13 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     @include('layouts.inc.nav')
     <!-- End Navbar -->
 
 
-   
+
 
     <!-- Content -->
     <section id="content">

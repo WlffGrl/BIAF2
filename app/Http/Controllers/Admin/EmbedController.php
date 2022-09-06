@@ -40,6 +40,8 @@ class EmbedController extends Controller
     {
         $data = $request->validated();
         $embed = new Embeds;
+        $embed->title = $data['title'];
+        $embed->description = $data['description'];
         $embed->embed_links = $data['embed_links'];
         $embed->save();
         return redirect('admin/embed')->with('message', 'Link embed Added!!');
@@ -62,9 +64,10 @@ class EmbedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($embed_id)
     {
-        //
+        $embed = Embeds::find($embed_id);
+        return view('admin.embed.edit', compact('embed'));
     }
 
     /**
@@ -74,9 +77,15 @@ class EmbedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmbedFormRequest $request, $embed_id)
     {
-        //
+        $data = $request->validated();
+        $embed = Embeds::find($embed_id);
+        $embed->title = $data['title'];
+        $embed->description = $data['description'];
+        $embed->update();
+
+        return redirect('admin/embed')->with('message', 'Link embed Updated!!');
     }
 
     /**

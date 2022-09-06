@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     @include('layouts.inc.nav')
     <!-- End Navbar -->
@@ -59,6 +59,14 @@
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
     <script src="js/scripts.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <script language="JavaScript" type="text/javascript">
+        $(document).ready(function(){
+          $('.carousel').carousel({
+            interval: 10000
+          })
+        });
+    </script>
 
 
 </body>

@@ -52,6 +52,20 @@
                     </nav>
                 </div>
 
+                <a class="nav-link {{Request::is('admin/jadwal') || Request::is('admin/add-jadwal') || Request::is('admin/edit-jadwal/*') ? 'collapse active' : 'collapsed'}} " href="#" data-bs-toggle="collapse" data-bs-target="#collapseJadwal"
+                    aria-expanded="false" aria-controls="collapseJadwal">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-video"></i></div>
+                    Jadwal
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse {{Request::is('admin/jadwal') || Request::is('admin/add-jadwal') || Request::is('admin/edit-jadwal/*') ? 'show' : ''}}" id="collapseJadwal" aria-labelledby="headingFive"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link {{Request::is('admin/add-jadwal') ? 'active' : ''}}" href="{{url('/admin/add-jadwal')}}">Add jadwal</a>
+                        <a class="nav-link {{Request::is('admin/jadwal') || Request::is('admin/edit-jadwal/*') ? 'active' : ''}}" href="{{url('admin/jadwal')}}">View Jadwal</a>
+                    </nav>
+                </div>
+
                 <a class="nav-link {{Request::is('admin/users') ? 'active' : ''}}" href="{{url('/admin/users')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Users
