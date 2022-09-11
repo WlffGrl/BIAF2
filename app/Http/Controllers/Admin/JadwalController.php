@@ -69,9 +69,10 @@ class JadwalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($jadwal_id)
     {
-        //
+        $jadwal = Jadwal::find($jadwal_id);
+        return view('admin.jadwal.edit', compact('jadwal'));
     }
 
     /**
@@ -81,9 +82,18 @@ class JadwalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(JadwalFormRequest $request, $jadwal_id)
     {
-        //
+        $data = $request->validated();
+        $jadwal = Jadwal::find($jadwal_id);
+        $jadwal->title = $data['title'];
+        $jadwal->slug = Str::slug($data['slug']);
+        $jadwal->description = $data['description'];
+        $jadwal->status = $request->status == true ? '1' : '0';
+        $jadwal->created_by = Auth::user()->id;
+        $jadwal->update();
+
+        return redirect('admin/jadwal')->with('message', 'Jadwal Diperbaharui!!');
     }
 
     /**

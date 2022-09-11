@@ -35,7 +35,7 @@
 
                 <!--Grid column-->
                 <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
-                    <img src="img/slogan_2022.jpg" class="img-fluid" alt="">
+                    <img src="img/Banner.png" class="img-fluid" alt="">
                     <div class="row justify-content-center p-4">
                         <ul class="">
                             <hr>
