@@ -42,6 +42,10 @@ class FrontendController extends Controller
         $embed = Embeds::orderBy('created_at', 'desc')->get();
         return view('frontend.investasi')->with('embed', $embed);
     }
+    public function test()
+    {
+        return view('frontend.test');
+    }
     /*
     public function slider()
     {

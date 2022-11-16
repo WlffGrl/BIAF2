@@ -32,7 +32,7 @@ class LoginController extends Controller
     public function authenticated()
     {
         if (Auth::user()->role_as == '1') {
-            return redirect('admin/dashboard')->with('status', 'Welcome to Admin Dashboard');
+            return redirect('admin/posts')->with('status', 'Welcome to Admin Dashboard');
         } else if (Auth::user()->role_as == '0') {
             return redirect('/')->with('status', 'Login Succsesfull');
         } else {

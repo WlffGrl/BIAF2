@@ -54,9 +54,9 @@
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
+    <script src="{{ asset('assets/js/chart.js')}}"></script>
     <script src="js/scripts.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-
     <script language="JavaScript" type="text/javascript">
         $(document).ready(function(){
           $('.carousel').carousel({
@@ -64,6 +64,7 @@
           })
         });
     </script>
+
 
 
 </body>

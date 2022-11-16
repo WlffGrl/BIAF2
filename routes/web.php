@@ -30,6 +30,7 @@ Route::get('/pengukuran', [App\Http\Controllers\Frontend\FrontendController::cla
 
 
 Route::get('/investasi', [App\Http\Controllers\Frontend\FrontendController::class, 'investasi']);
+Route::get('/test', [App\Http\Controllers\Frontend\FrontendController::class, 'test']);
 
 
 

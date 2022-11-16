@@ -23,4 +23,8 @@ class PagesController extends Controller
     {
         return view('pages.pengukuran');
     }
+    public function test()
+    {
+        return view('pages.test');
+    }
 }

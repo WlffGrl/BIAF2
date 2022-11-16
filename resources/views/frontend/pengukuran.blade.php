@@ -17,9 +17,40 @@
 
                 <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
                     <div class="shadow p-3 mb-5 bg-body rounded">
-                    <img src="{{asset('img/graf.jpeg')}}" class="img-fluid" alt="">
-                </div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    
                 </div>
             </div>
 </div>
+
+{{--
+<div class="shadow p-3 mb-5 bg-body rounded">
+<img src="{{asset('img/graf.jpeg')}}" class="img-fluid" alt="">
+</div>
+--}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Tatakelola dan Management','Jaringan', 'SDM', 'Inovasi', 'Keuangan'],
+        datasets: [{
+          label: 'Series 1',
+          data: [87.50, 60.71, 84.29, 64.29, 66.67],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
 @endsection
