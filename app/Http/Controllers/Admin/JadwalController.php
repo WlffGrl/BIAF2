@@ -102,8 +102,14 @@ class JadwalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($jadwal_id)
     {
-        //
+        $jadwal = Jadwal::find($jadwal_id);
+        if ($jadwal) {
+            $jadwal->delete();
+            return redirect('admin/jadwal')->with('message', 'Delete Success!!');
+        } else {
+            return redirect('admin/jadwal')->with('message', 'No jadwal Found');
+        }
     }
 }

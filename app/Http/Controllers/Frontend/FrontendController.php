@@ -25,12 +25,12 @@ class FrontendController extends Controller
     }
     public function pengumuman()
     {
-        $posts = Post::orderBy('created_at', 'desc')->where('status', '0')->paginate(10);
+        $posts = Post::orderBy('created_at', 'asc')->where('status', '0')->paginate(10);
         return view('frontend.pengumuman')->with('posts', $posts);
     }
     public function jadwal()
     {
-        $jadwal = Jadwal::orderBy('created_at', 'desc')->where('status', '0')->paginate(10);
+        $jadwal = Jadwal::orderBy('created_at', 'asc')->where('status', '0')->paginate(10);
         return view('frontend.jadwal')->with('jadwal', $jadwal);
     }
     public function pengukuran()

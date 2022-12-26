@@ -13,7 +13,7 @@
     </button>
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="{{url('/')}}" class="nav-link {{Request::is('/') ? 'active' : ''}}">BIAF</a></li>
+            <li class="nav-item"><a href="{{url('/')}}" class="nav-link {{Request::is('/') ? 'active' : ''}}">BERANDA</a></li>
             <li class="nav-item"><a href="{{url('pengumuman')}}" class="nav-link {{Request::is('pengumuman') ? 'active' : ''}}">PENGUMUMAN</a></li>
             <li class="nav-item"><a href="{{url('jadwal')}}" class="nav-link {{Request::is('jadwal') ? 'active' : ''}}">JADWAL</a></li>
             <li class="nav-item"><a href="{{url('pengukuran')}}" class="nav-link {{Request::is('pengukuran') ? 'active' : ''}}">INDEX PENGUKURAN</a></li>
