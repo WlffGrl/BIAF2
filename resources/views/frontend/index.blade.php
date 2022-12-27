@@ -63,7 +63,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-truncate">{{$postitem->name}}</h5>
                                     <p class="fs-6"><i class="fa fa-calendar"></i>{{$postitem->created_at->format('d-m-Y')}}</p>
-                                    <p class="card-text text-truncate">{{$postitem->description}}</p>
                                     <a href="{{asset('pengumuman/'.$postitem->slug)}}" class="btn btn-primary">Lihat Selengkapnya</a>
                                 </div>
                             </div>
@@ -71,6 +70,8 @@
 
                         @endforelse
                     </div>
+                    <br>
+                    <a href="{{url('pengumuman')}}" class="btn-sm float-end">Lihat Semua</a>
                 </div>
                 <!--Grid column-->
                 <!--Grid column-->
@@ -84,7 +85,6 @@
                                 <div class="card-body">
                                 <h5 class="card-title text-truncate">{{$item->title}}</h5>
                                 <p class="fs-6"><i class="fa fa-calendar"></i>{{$item->created_at->format('d-m-Y')}}</p>
-                                <p class="card-text text-truncate">{{$item->description}}</p>
                                 <a href="{{asset('jadwal/'.$item->slug)}}" class="btn btn-primary">Lihat Selengkapnya</a>
                             </div>
                         </div>
@@ -92,6 +92,8 @@
 
                         @endforelse
                     </div>
+                    <br>
+                    <a href="{{url('jadwal')}}" class="btn-sm float-end">Lihat Semua</a>
                 </div>
                 <!--Grid column-->
             </div>

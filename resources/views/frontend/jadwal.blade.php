@@ -12,7 +12,6 @@
       <div class="card-body">
         <h5 class="card-title text-truncate">{{$item->title}}</h5>
         <p class="fs-6"><i class="fa fa-calendar"></i>{{$item->created_at->format('d-m-Y')}}</p>
-        <p class="card-text text-truncate">{{$item->description}}</p>
         <a href="{{asset('jadwal/'.$item->slug)}}" class="btn btn-primary">Lihat Selengkapnya</a>
       </div>
     </div>
