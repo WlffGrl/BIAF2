@@ -21,7 +21,9 @@ class FrontendController extends Controller
     public function index()
     {
         $slider = slider::where('status', '0')->get();
-        return view('frontend.index', compact('slider'));
+        $posts = Post::orderBy('created_at', 'asc')->where('status', '0')->paginate(4);
+        $jadwal = Jadwal::orderBy('created_at', 'asc')->where('status', '0')->paginate(4);
+        return view('frontend.index', compact('slider'))->with('posts', $posts)->with('jadwal', $jadwal);
     }
     public function pengumuman()
     {
